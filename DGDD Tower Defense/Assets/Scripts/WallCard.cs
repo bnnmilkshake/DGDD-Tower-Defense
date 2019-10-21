@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretCard : MonoBehaviour
+public class WallCard : MonoBehaviour
 {
     private LevelManager theLevelManager;
 
@@ -17,9 +17,8 @@ public class TurretCard : MonoBehaviour
     {
         if(theLevelManager.currency >= rarity)
         {
-            Instantiate(theLevelManager.tower, theLevelManager.inventory.transform);
+            Instantiate(theLevelManager.wall, theLevelManager.inventory.transform);
             theLevelManager.currency -= rarity;
-
             Destroy(gameObject);
         }
     }

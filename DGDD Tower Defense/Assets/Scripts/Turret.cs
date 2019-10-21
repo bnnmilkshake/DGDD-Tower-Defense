@@ -56,9 +56,7 @@ public class Turret : MonoBehaviour
             }
 
         }
-        target = closestEnemy; 
-
-        
+        target = closestEnemy;
     }
 
     bool EnemyInRange()

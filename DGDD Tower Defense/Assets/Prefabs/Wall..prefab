@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 1541423126630529304}
   - component: {fileID: 7312950187661709324}
   m_Layer: 5
-  m_Name: Tower
-  m_TagString: Tower
+  m_Name: Wall.
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.3537736, b: 0.3537736, a: 0.392}
+  m_Color: {r: 0.35294116, g: 0.5655287, b: 1, a: 0.392}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -134,7 +134,7 @@ MonoBehaviour:
         m_MethodName: Build
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8234750765542422472, guid: abaf71dd859548d4c8a9de480116b81b,
+          m_ObjectArgument: {fileID: 1739819718380003152, guid: b91349e23a2b67d4384b61d74429cb87,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0

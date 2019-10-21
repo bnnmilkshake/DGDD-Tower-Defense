@@ -11,7 +11,8 @@ public class Node : MonoBehaviour
 
     //components
     BuildManager builder; 
-    Renderer rend; 
+    Renderer rend;
+    LevelManager theLevelManager;
 
     
 
@@ -21,12 +22,12 @@ public class Node : MonoBehaviour
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
         builder = FindObjectOfType<BuildManager>();
-
+        theLevelManager = FindObjectOfType<LevelManager>();
     }
 
     private void OnMouseEnter()
     {
-        Debug.Log("Hi");
+        //Debug.Log("Hi");
         rend.material.color = hoverColor; 
 
        
@@ -41,13 +42,24 @@ public class Node : MonoBehaviour
             if(builder.selectedBuilding != null)
             {
                 Instantiate(builder.selectedBuilding, buildLocation, Quaternion.identity);
+                builder.selectedBuilding = null;
+                Destroy(theLevelManager.towerSelected);
             }
         }
-       
-
-        
-
     }
+
+    /*private void OnMouseUp()
+    {
+        if (theLevelManager.towerSelected)
+        {
+            if (!hasStructure)
+            {
+                //Selection
+                Vector3 buildLocation = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                Instantiate(theLevelManager.turret, buildLocation, Quaternion.identity);
+            }
+        }
+    }*/
 
     private void OnMouseExit()
     {
