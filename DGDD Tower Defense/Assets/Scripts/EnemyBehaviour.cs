@@ -9,9 +9,9 @@ public class EnemyBehaviour : DestructibleObject
     GameObject endPt;
 
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
-
+        base.Start();
         agent = GetComponent<NavMeshAgent>();
         endPt = GameObject.FindGameObjectWithTag("Base");
         agent.SetDestination(endPt.transform.position);
