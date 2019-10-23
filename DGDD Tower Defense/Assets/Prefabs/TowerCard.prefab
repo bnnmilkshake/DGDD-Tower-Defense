@@ -59,7 +59,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31f512d684d9c274386d3727d65690aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower: {fileID: 4099954554413150496, guid: 973a0095fd8d1f24bb6fa9f78c776c10, type: 3}
+  cost: 1
+  cardNumber: 1
 --- !u!114 &7788854941879730703
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,11 +11,11 @@ public class Turret : MonoBehaviour
     public Transform gunPoint;
     public float offset = 90;
 
-
     public Transform target;
     public float range;
 
-    public Transform closestEnemy; 
+    public Transform closestEnemy;
+
 
     // Start is called before the first frame update
     void Start()
@@ -29,12 +29,17 @@ public class Turret : MonoBehaviour
         //Hella buggy and rotation is off, needs a lot of fixing
         if(EnemyInRange() && closestEnemy != null)
         {
-            //Calculate difference
-            Vector3 difference = closestEnemy.position - transform.position;
+            //To face the enemies
+            Vector3 targetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
+            transform.LookAt(targetPosition);
 
-            //Calculate rotation to face enemy
-            float rotY = (Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg) + offset;
-            transform.rotation = Quaternion.Euler(0f, rotY, 0f);
+            nextFire -= Time.deltaTime;
+
+            if(nextFire <= 0f)
+            {
+                Instantiate(bullet, gunPoint.position, gunPoint.transform.rotation);
+                nextFire = fireRate;
+            }
         }
     }
 

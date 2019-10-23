@@ -7,7 +7,7 @@ public class Node : MonoBehaviour
     public Color hoverColor;
     private Color startColor;
 
-    [SerializeField] bool hasStructure; 
+    [SerializeField] bool hasStructure;
 
     //components
     BuildManager builder; 
@@ -25,51 +25,20 @@ public class Node : MonoBehaviour
         theLevelManager = FindObjectOfType<LevelManager>();
     }
 
-    private void OnMouseEnter()
+    private void OnMouseEnter() //When mouse has just hovered the node
     {
-        //Debug.Log("Hi");
-        rend.material.color = hoverColor; 
-
-       
+        rend.material.color = hoverColor;
+        theLevelManager.hoveringOverNode = true;
     }
 
-    private void OnMouseDown()
+    private void OnMouseOver() //When mouse is currently hovering over the node
     {
-        if (!hasStructure)
-        {
-            //Selection
-            Vector3 buildLocation = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-            if(builder.selectedBuilding != null)
-            {
-                Instantiate(builder.selectedBuilding, buildLocation, Quaternion.identity);
-                builder.selectedBuilding = null;
-                Destroy(theLevelManager.towerSelected);
-            }
-        }
+        theLevelManager.buildLocation = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
     }
 
-    /*private void OnMouseUp()
+    private void OnMouseExit() //When mouse has moved away from the node
     {
-        if (theLevelManager.towerSelected)
-        {
-            if (!hasStructure)
-            {
-                //Selection
-                Vector3 buildLocation = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-                Instantiate(theLevelManager.turret, buildLocation, Quaternion.identity);
-            }
-        }
-    }*/
-
-    private void OnMouseExit()
-    {
-        rend.material.color = startColor; 
-         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        rend.material.color = startColor;
+        theLevelManager.hoveringOverNode = false;
     }
 }
