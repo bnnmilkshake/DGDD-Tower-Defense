@@ -10,10 +10,14 @@ public class Projectile : MonoBehaviour
     public float range;
     public float speed;
 
+    Rigidbody bulletRB;
+
+
     // Start is called before the first frame update
     void Start()
     {
         Destroy(gameObject, range);
+        bulletRB = GetComponent<Rigidbody>();
     }
 
     void Update()
