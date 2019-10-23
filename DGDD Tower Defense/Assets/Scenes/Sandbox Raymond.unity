@@ -3510,7 +3510,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 4.97e-43, y: 6.753e-42, z: 0, w: 60976.312}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -10855,8 +10855,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -134.8, y: -455}
-  m_SizeDelta: {x: -718.8, y: -917.8}
+  m_AnchoredPosition: {x: -134.8, y: -480}
+  m_SizeDelta: {x: -718.8, y: -986}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &583574086
 MonoBehaviour:
@@ -17031,6 +17031,7 @@ MonoBehaviour:
   deck: {fileID: 583574084}
   trashArea: {fileID: 239199287}
   buildLocation: {x: 0, y: 0, z: 0}
+  hoveringOverNode: 0
   card:
   - {fileID: 7221300591781465783, guid: e978dddce12394143a6f5796d2762c7e, type: 3}
   - {fileID: 7221300591781465783, guid: 9ee9099d4c4b12a4a929b6641c319b53, type: 3}
