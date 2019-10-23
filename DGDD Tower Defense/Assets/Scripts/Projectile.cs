@@ -6,12 +6,15 @@ public class Projectile : MonoBehaviour
 {
     public bool enemyProjectile;
     public int damage; 
-    public float range; 
+    public float range;
+
+    Rigidbody bulletRB;
 
     // Start is called before the first frame update
     void Start()
     {
         Destroy(gameObject, range);
+        bulletRB = GetComponent<Rigidbody>();
     }
 
     private void OnTriggerEnter(Collider other)
