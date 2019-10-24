@@ -285,6 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  currencyToGive: 1
   range: 2.69
   target: {fileID: 0}
   partToRotate: {fileID: 4199936966808058423}

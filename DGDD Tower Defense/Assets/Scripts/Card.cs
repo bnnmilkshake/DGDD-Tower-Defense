@@ -40,12 +40,12 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         {
             if (distanceFromTrash >= 50) //If the card is not near the trash area
             {
-                if (theLevelManager.hoveringOverNode)
+                if (theLevelManager.hoveringOverNode) //If a node is being highlighted, the levelmanager will pick it up. If this is true, a specific node is being hovered.
                 {
                     //Build the building card
                     Debug.Log("Building has been built, -" + cost + " Currency");
                     theLevelManager.currency -= cost;
-                    Instantiate(theLevelManager.building[cardNumber], theLevelManager.buildLocation, Quaternion.identity);
+                    Instantiate(theLevelManager.building[cardNumber], theLevelManager.buildLocation, Quaternion.identity); //The building will be built on where hovered.
                     theLevelManager.ReplaceDeck();
                     Destroy(gameObject);
                 }

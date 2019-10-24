@@ -13,11 +13,13 @@ public class LevelManager : MonoBehaviour
     public GameObject deck;
     public Transform trashArea;
 
-    public Vector3 buildLocation;
-    public bool hoveringOverNode;
-
     public GameObject[] card;
     public GameObject[] building;
+
+    [Header("Displays")]
+    public Vector3 buildLocation;
+    public bool hoveringOverNode;
+    public string hoveredBuilding;
 
     void Update()
     {

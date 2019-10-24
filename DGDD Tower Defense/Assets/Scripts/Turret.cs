@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
+    private LevelManager theLevelManager;
+    private Renderer rend;
+
     [Header("Shooting")]
     public float fireRate = 1f;
     float nextFire; //The time before the player can shoot again
@@ -15,6 +18,10 @@ public class Turret : MonoBehaviour
     public float range;
 
     public Transform closestEnemy;
+
+    [Header("Renderer")]
+    public Color hoverColor;
+    private Color startColor;
 
 
     // Start is called before the first frame update
@@ -88,5 +95,17 @@ public class Turret : MonoBehaviour
     {
         Gizmos.color = Color.green; 
         Gizmos.DrawWireSphere(transform.position, range); 
+    }
+
+    private void OnMouseEnter() //When mouse has just hovered the node
+    {
+        //rend.material.color = hoverColor;
+        //theLevelManager.hoveringOverNode = true;
+    }
+
+    private void OnMouseExit() //When mouse has moved away from the node
+    {
+        //rend.material.color = startColor;
+        //theLevelManager.hoveringOverNode = false;
     }
 }
