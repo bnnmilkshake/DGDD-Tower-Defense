@@ -5,6 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class Horde 
 {
-    public GameObject[] enemyToSpawn;
-    public float timeBeforeSpawn; 
+    [HideInInspector]
+    public string inspectorName = "Enemy";
+    public EnemyInfo.EnemyType enemyToSpawn;
+    public int quantity;
+   
 }

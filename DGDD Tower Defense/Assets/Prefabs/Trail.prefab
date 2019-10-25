@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7006615111905108242}
   - component: {fileID: 696320130709997358}
   - component: {fileID: 3263945185056215664}
-  - component: {fileID: 1038776979851414012}
+  - component: {fileID: 5709324764004257282}
   m_Layer: 10
   m_Name: Trail
   m_TagString: Untagged
@@ -151,7 +151,7 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1038776979851414012
+--- !u!114 &5709324764004257282
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,6 +160,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 759320860622692423}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 684f0cbd4e9c4b643aff8b163f6f3664, type: 3}
+  m_Script: {fileID: 11500000, guid: 4cb8de833698d234b81ea1671e61a282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
