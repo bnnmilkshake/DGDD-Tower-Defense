@@ -5,50 +5,32 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
+    [Header("Currency Display")]
     public int currency;
+
+    [Header("Essential Inputs")]
     public Text currencyText;
-    public GameObject inventory;
-    public GameObject buySlots;
+    public GameObject deck;
+    public Transform trashArea;
 
-    public GameObject tower;
-    public GameObject wall;
+    public GameObject[] card;
+    public GameObject[] building;
 
-    public GameObject towerSelected;
-
-    public GameObject turret;
-
-    public GameObject[] cards;
-
-    public int numberOfTowers;
-    public int numberOfWalls;
+    [Header("Displays")]
+    public Vector3 buildLocation;
+    public bool hoveringOverNode;
+    public string hoveredBuilding;
 
     void Update()
     {
         currencyText.text = "Currency: " + currency;
-
-        GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower");
-        numberOfTowers = towers.Length;
-        GameObject[] walls = GameObject.FindGameObjectsWithTag("Wall");
-        numberOfWalls = walls.Length;
     }
 
-    public void Reroll()
+    public void ReplaceDeck()
     {
-        if(currency >= 2)
-        {
-            foreach (Transform child in buySlots.transform)
-            {
-                Destroy(child.gameObject);
-            }
+        int randomCardNumber = Random.Range(0, 2);
+        Instantiate(card[randomCardNumber], deck.transform);
 
-            for (int i = 0; i < 5; i++)
-            {
-                int randomCard = Random.Range(0, 2);
-
-                Instantiate(cards[randomCard], buySlots.transform);
-            }
-
-            currency -= 2;
-        }
+        Debug.Log("Building " + randomCardNumber);
     }
 }

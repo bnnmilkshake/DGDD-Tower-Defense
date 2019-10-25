@@ -8,6 +8,9 @@ public class EnemyBehaviour : DestructibleObject
     NavMeshAgent agent;
     GameObject endPt;
 
+    [Header("Essentials")]
+    public int currencyToGive;
+
     //public Transform target;
 
     [Header("Turret Varibles")]
@@ -23,6 +26,7 @@ public class EnemyBehaviour : DestructibleObject
     public Transform firePoint;
     public float bulletSpeed;
 
+
     // Start is called before the first frame update
     public override void Start()
     {
@@ -37,6 +41,11 @@ public class EnemyBehaviour : DestructibleObject
     private void LateUpdate()
     {
         agent.SetDestination(endPt.transform.position);
+    }
+
+    private void OnDestroy()
+    {
+        FindObjectOfType<LevelManager>().currency += currencyToGive;
     }
 
     void FindTurrets()
@@ -145,5 +154,4 @@ public class EnemyBehaviour : DestructibleObject
         Gizmos.DrawWireSphere(transform.position, range);
         Gizmos.color = Color.red;
     }
-
 }

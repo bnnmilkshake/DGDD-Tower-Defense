@@ -239,6 +239,7 @@ MonoBehaviour:
   target: {fileID: 0}
   range: 5
   closestEnemy: {fileID: 0}
+  hoverColor: {r: 1, g: 0, b: 0, a: 0.7764706}
 --- !u!1 &7712556412839075578
 GameObject:
   m_ObjectHideFlags: 0

@@ -93,7 +93,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
+  buildLocation: {x: 0, y: 0, z: 0}
+  tower: {fileID: 8234750765542422472, guid: abaf71dd859548d4c8a9de480116b81b, type: 3}
   hasStructure: 0
+  hovered: 0
 --- !u!65 &1713819991116223769
 BoxCollider:
   m_ObjectHideFlags: 0

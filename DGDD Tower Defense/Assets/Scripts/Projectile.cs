@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [Header("Projectile")]
     public bool enemyProjectile;
     public int damage; 
     public float range;
+    public float speed;
 
     Rigidbody bulletRB;
+
 
     // Start is called before the first frame update
     void Start()
@@ -17,9 +20,14 @@ public class Projectile : MonoBehaviour
         bulletRB = GetComponent<Rigidbody>();
     }
 
+    void Update()
+    {
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-     if(other.tag == WhoIsEnemy())
+     if(other.tag == "Enemy")
         {
             other.SendMessageUpwards("TakeDamage", damage);
 
